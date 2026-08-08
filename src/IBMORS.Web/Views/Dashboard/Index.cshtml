@@ -1,0 +1,264 @@
+@{
+    ViewData["Title"] = "IBMORS Dashboard";
+}
+
+<div class="mb-4">
+    <h2 class="fw-bold text-primary">
+        IBMORS Executive Dashboard
+    </h2>
+    <p class="text-muted mb-1">
+        Integrated Budget Monitoring, Obligation and Reporting System
+    </p>
+    <small class="text-secondary">
+        Provincial Government of Guimaras • Fiscal Year 2026
+    </small>
+</div>
+
+<!-- Summary Cards -->
+<div class="row g-3 mb-4">
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 bg-primary text-white">
+            <div class="card-body">
+                <h6>Total Appropriation</h6>
+                <h3>₱210,000,000</h3>
+                <small>FY 2026 Approved Budget</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 bg-warning text-dark">
+            <div class="card-body">
+                <h6>Total Obligated</h6>
+                <h3>₱145,250,000</h3>
+                <small>69.17% Utilized</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 bg-success text-white">
+            <div class="card-body">
+                <h6>Remaining Budget</h6>
+                <h3>₱64,750,000</h3>
+                <small>Available Balance</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 bg-secondary text-white">
+            <div class="card-body">
+                <h6>Active AROs</h6>
+                <h3>35</h3>
+                <small>Allotment Release Orders</small>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Budget Monitoring by Office -->
+
+<div class="card shadow-sm mb-4">
+
+    <div class="card-header bg-white">
+
+        <strong>Budget Monitoring by Office</strong>
+
+    </div>
+
+    <div class="card-body p-0">
+
+        <table class="table table-hover mb-0">
+
+            <thead class="table-light">
+
+                <tr>
+
+                    <th>Office Code</th>
+
+                    <th>Office Name</th>
+
+                    <th class="text-end">Appropriation</th>
+
+                    <th class="text-end">Obligated</th>
+
+                    <th class="text-end">Remaining</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td><strong>1011</strong></td>
+
+                    <td>Governor's Office</td>
+
+                    <td class="text-end">₱25,000,000</td>
+
+                    <td class="text-end">₱18,200,000</td>
+
+                    <td class="text-end text-success">₱6,800,000</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>1031</strong></td>
+
+                    <td>Provincial Administrator's Office</td>
+
+                    <td class="text-end">₱18,500,000</td>
+
+                    <td class="text-end">₱11,400,000</td>
+
+                    <td class="text-end text-success">₱7,100,000</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>1061</strong></td>
+
+                    <td>Provincial General Services Office</td>
+
+                    <td class="text-end">₱12,800,000</td>
+
+                    <td class="text-end">₱8,100,000</td>
+
+                    <td class="text-end text-success">₱4,700,000</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>1071</strong></td>
+
+                    <td>Provincial Budget Office</td>
+
+                    <td class="text-end">₱9,200,000</td>
+
+                    <td class="text-end">₱5,600,000</td>
+
+                    <td class="text-end text-success">₱3,600,000</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- Governor's Office Budget Units -->
+
+<div class="row">
+
+    <div class="col-md-8">
+
+        <div class="card shadow-sm">
+
+            <div class="card-header bg-white">
+
+                <strong>Governor's Office Budget Units (Proposed)</strong>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <h6>Governor Proper</h6>
+
+                        <p class="mb-1">Appropriation: ₱18,000,000</p>
+
+                        <p class="mb-1">Obligated: ₱13,200,000</p>
+
+                        <p class="text-success">Remaining: ₱4,800,000</p>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <h6>PDRRMS</h6>
+
+                        <p class="mb-1">Appropriation: ₱5,000,000</p>
+
+                        <p class="mb-1">Obligated: ₱2,400,000</p>
+
+                        <p class="text-success">Remaining: ₱2,600,000</p>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <h6>PLEPSTF</h6>
+
+                        <p class="mb-1">Appropriation: ₱2,000,000</p>
+
+                        <p class="mb-1">Obligated: ₱800,000</p>
+
+                        <p class="text-success">Remaining: ₱1,200,000</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm">
+
+            <div class="card-header bg-white">
+
+                <strong>Recent Transactions</strong>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="mb-3">
+
+                    <small class="text-muted">ARO</small>
+
+                    <div>ARO-2026-008</div>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <small class="text-muted">OBR</small>
+
+                    <div>OBR-2026-015</div>
+
+                </div>
+
+                <div>
+
+                    <small class="text-muted">Adjustment</small>
+
+                    <div>Realignment-2026-003</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

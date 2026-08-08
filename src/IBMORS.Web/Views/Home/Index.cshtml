@@ -1,8 +1,145 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "IBMORS Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid mt-4">
+
+    <div class="mb-4">
+        <h2 class="fw-bold text-primary">
+            Integrated Budget Monitoring, Obligation and Reporting System
+        </h2>
+        <p class="text-muted mb-0">
+            Provincial Government of Guimaras
+        </p>
+        <small class="text-secondary">Fiscal Year 2026</small>
+    </div>
+
+    <div class="row mb-4">
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-primary text-white">
+                <div class="card-body">
+                    <h6>Total Appropriation</h6>
+                    <h3>₱210,000,000</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-warning text-dark">
+                <div class="card-body">
+                    <h6>Total Obligated</h6>
+                    <h3>₱145,250,000</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-success text-white">
+                <div class="card-body">
+                    <h6>Remaining Budget</h6>
+                    <h3>₱64,750,000</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-secondary text-white">
+                <div class="card-body">
+                    <h6>Utilization Rate</h6>
+                    <h3>69.17%</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light">
+            <strong>Budget Monitoring by Office</strong>
+        </div>
+        <div class="card-body p-0">
+
+            <table class="table table-hover mb-0">
+
+                <thead class="table-light">
+                    <tr>
+                        <th>Office</th>
+                        <th class="text-end">Appropriation</th>
+                        <th class="text-end">Obligated</th>
+                        <th class="text-end">Remaining</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Governor's Office</td>
+                        <td class="text-end">₱25,000,000</td>
+                        <td class="text-end">₱18,200,000</td>
+                        <td class="text-end text-success">₱6,800,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Provincial Administrator's Office</td>
+                        <td class="text-end">₱18,500,000</td>
+                        <td class="text-end">₱11,400,000</td>
+                        <td class="text-end text-success">₱7,100,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Provincial Budget Office</td>
+                        <td class="text-end">₱9,200,000</td>
+                        <td class="text-end">₱5,600,000</td>
+                        <td class="text-end text-success">₱3,600,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Provincial General Services Office</td>
+                        <td class="text-end">₱12,800,000</td>
+                        <td class="text-end">₱8,100,000</td>
+                        <td class="text-end text-success">₱4,700,000</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-light">
+            <strong>Governor's Office Budget Units (Proposed)</strong>
+        </div>
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <h6>Governor Proper</h6>
+                    <p class="mb-1">Appropriation: ₱18,000,000</p>
+                    <p class="mb-1">Obligated: ₱13,200,000</p>
+                    <p class="text-success">Remaining: ₱4,800,000</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h6>PDRRMS</h6>
+                    <p class="mb-1">Appropriation: ₱5,000,000</p>
+                    <p class="mb-1">Obligated: ₱2,400,000</p>
+                    <p class="text-success">Remaining: ₱2,600,000</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h6>PLEPSTF</h6>
+                    <p class="mb-1">Appropriation: ₱2,000,000</p>
+                    <p class="mb-1">Obligated: ₱800,000</p>
+                    <p class="text-success">Remaining: ₱1,200,000</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 </div>
