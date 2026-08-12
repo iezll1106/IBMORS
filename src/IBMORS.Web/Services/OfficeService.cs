@@ -88,4 +88,58 @@ public class OfficeService
 
         return count > 0;
     }
+
+    public Office? GetOfficeById(int id)
+    {
+        using var connection = new NpgsqlConnection(_connectionString);
+        connection.Open();
+
+        var sql = @"
+            SELECT office_id, office_code, office_name,
+                office_type, status
+            FROM offices
+            WHERE office_id = @id";
+
+        using var command = new NpgsqlCommand(sql, connection);
+        command.Parameters.AddWithValue("@id", id);
+
+        using var reader = command.ExecuteReader();
+
+        if (reader.Read())
+        {
+            return new Office
+            {
+                OfficeId = reader.GetInt32(0),
+                OfficeCode = reader.GetString(1),
+                OfficeName = reader.GetString(2),
+                OfficeType = reader.IsDBNull(3) ? "" : reader.GetString(3),
+                Status = reader.GetString(4)
+            };
+        }
+
+        return null;
+    }
+
+    public void UpdateOffice(Office office)
+    {
+        using var connection = new NpgsqlConnection(_connectionString);
+        connection.Open();
+
+        var sql = @"
+            UPDATE offices
+            SET office_name = @name,
+                office_type = @type,
+                status = @status,
+                updated_at = CURRENT_TIMESTAMP
+            WHERE office_id = @id";
+
+        using var command = new NpgsqlCommand(sql, connection);
+
+        command.Parameters.AddWithValue("@id", office.OfficeId);
+        command.Parameters.AddWithValue("@name", office.OfficeName);
+        command.Parameters.AddWithValue("@type", office.OfficeType);
+        command.Parameters.AddWithValue("@status", office.Status);
+
+        command.ExecuteNonQuery();
+    }
 }

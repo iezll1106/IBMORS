@@ -1,0 +1,57 @@
+@model IBMORS.Web.Models.Office
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    ViewData["Title"] = "Office Details";
+}
+
+<div class="mb-4">
+
+    <h3 class="fw-bold text-primary">
+        Office Details
+    </h3>
+
+    <p class="text-muted">
+        Office information and organizational details.
+    </p>
+
+</div>
+
+<div class="card shadow-sm border-0">
+
+    <div class="card-body">
+
+        <dl class="row">
+
+            <dt class="col-sm-3">Office Code</dt>
+            <dd class="col-sm-9">@Model.OfficeCode</dd>
+
+            <dt class="col-sm-3">Office Name</dt>
+            <dd class="col-sm-9">@Model.OfficeName</dd>
+
+            <dt class="col-sm-3">Office Type</dt>
+            <dd class="col-sm-9">@Model.OfficeType</dd>
+
+            <dt class="col-sm-3">Status</dt>
+            <dd class="col-sm-9">@Model.Status</dd>
+
+        </dl>
+
+        <a asp-action="Edit"
+           asp-route-id="@Model.OfficeId"
+           class="btn btn-primary">
+
+            Edit Office
+
+        </a>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+
+            Back
+
+        </a>
+
+    </div>
+
+</div>

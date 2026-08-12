@@ -1,0 +1,84 @@
+@model IBMORS.Web.Models.Office
+
+<div asp-validation-summary="ModelOnly"
+     class="alert alert-danger">
+</div>
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    ViewData["Title"] = "Edit Office";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i>
+        @TempData["SuccessMessage"]
+
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="alert">
+        </button>
+    </div>
+}
+
+<div class="mb-4">
+    <h3 class="fw-bold text-primary">Edit Office</h3>
+    <p class="text-muted">Update the details of the selected office.</p>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body">
+
+        <form method="post"
+              asp-controller="Offices"
+              asp-action="Edit"
+              asp-route-id="@Model.OfficeId">
+
+            <!-- Hidden Office ID -->
+            <input type="hidden" asp-for="OfficeId" />
+
+            <div class="mb-3">
+                <label asp-for="OfficeCode" class="form-label"></label>
+                <input asp-for="OfficeCode" class="form-control" readonly />
+                <small class="text-muted">
+                    Office Code cannot be changed after creation.
+                </small>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="OfficeName" class="form-label"></label>
+                <input asp-for="OfficeName" class="form-control" />
+                <span asp-validation-for="OfficeName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="OfficeType" class="form-label"></label>
+                <select asp-for="OfficeType" class="form-select">
+                    <option value="Office">Office</option>
+                    <option value="Section">Section</option>
+                    <option value="Unit">Unit</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Status" class="form-label"></label>
+                <select asp-for="Status" class="form-select">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-check-circle me-1"></i>
+                Save Changes
+            </button>
+
+            <a asp-action="Index" class="btn btn-secondary">
+                Cancel
+            </a>
+
+        </form>
+
+    </div>
+</div>

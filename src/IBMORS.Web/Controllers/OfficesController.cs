@@ -47,4 +47,43 @@ public class OfficesController : Controller
 
         return RedirectToAction(nameof(Index));
     }
+
+    [HttpGet("Details/{id}")]
+    public IActionResult Details(int id)
+    {
+        var office = _officeService.GetOfficeById(id);
+
+        if (office == null)
+            return NotFound();
+
+        return View(office);
+    }
+
+    [HttpGet("Edit/{id}")]
+    public IActionResult Edit(int id)
+    {
+        var office = _officeService.GetOfficeById(id);
+
+        if (office == null)
+            return NotFound();
+
+        return View(office);
+    }
+
+    [HttpPost("Edit/{id}")]
+    public IActionResult Edit(int id, Office office)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(office);
+        }
+
+        office.OfficeId = id;
+
+        _officeService.UpdateOffice(office);
+
+        TempData["SuccessMessage"] = "Office updated successfully.";
+
+        return RedirectToAction(nameof(Index));
+    }
 }
