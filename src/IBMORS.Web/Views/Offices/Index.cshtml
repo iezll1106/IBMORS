@@ -1,0 +1,92 @@
+@model List<IBMORS.Web.Models.Office>
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    ViewData["Title"] = "Office Management";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h3 class="fw-bold text-primary mb-1">Office Management</h3>
+        <p class="text-muted mb-0">
+            Manage Provincial Government Offices and Office Sections
+        </p>
+    </div>
+
+    <button class="btn btn-primary">
+        <i class="bi bi-plus-circle me-1"></i>
+        Add Office
+    </button>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body">
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text"
+                       class="form-control"
+                       placeholder="Search by office code or office name">
+            </div>
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Office Code</th>
+                        <th>Office Name</th>
+                        <th>Type</th>
+                        <th>Parent Office</th>
+                        <th>Status</th>
+                        <th class="text-end">Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var office in Model)
+                    {
+                        <tr>
+
+                            <td><strong>@office.OfficeCode</strong></td>
+                            <td>@office.OfficeName</td>
+                            <td>@office.OfficeType</td>
+                            <td>@(office.ParentOfficeName ?? "-")</td>
+                            <td>
+                                @if (office.Status == "Active")
+                                {
+                                    <span class="badge bg-success">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Inactive</span>
+                                }
+                            </td>
+                            <td class="text-end">
+                                <button class="btn btn-sm btn-outline-primary me-1">
+                                    View
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary">
+                                    Edit
+                                </button>
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
