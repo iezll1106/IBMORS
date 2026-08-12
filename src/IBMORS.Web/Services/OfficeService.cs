@@ -51,4 +51,41 @@ public class OfficeService
 
         return offices;
     }
+
+    public void AddOffice(Office office)
+    {
+        using var connection = new NpgsqlConnection(_connectionString);
+        connection.Open();
+
+        var sql = @"
+            INSERT INTO offices
+            (office_code, office_name, office_type, status)
+            VALUES
+            (@code, @name, @type, @status);
+        ";
+
+        using var command = new NpgsqlCommand(sql, connection);
+
+        command.Parameters.AddWithValue("@code", office.OfficeCode);
+        command.Parameters.AddWithValue("@name", office.OfficeName);
+        command.Parameters.AddWithValue("@type", office.OfficeType);
+        command.Parameters.AddWithValue("@status", office.Status);
+
+        command.ExecuteNonQuery();
+    }
+
+    public bool OfficeCodeExists(string officeCode)
+    {
+        using var connection = new NpgsqlConnection(_connectionString);
+        connection.Open();
+
+        var sql = "SELECT COUNT(*) FROM offices WHERE office_code = @code";
+
+        using var command = new NpgsqlCommand(sql, connection);
+        command.Parameters.AddWithValue("@code", officeCode);
+
+        var count = Convert.ToInt32(command.ExecuteScalar());
+
+        return count > 0;
+    }
 }
